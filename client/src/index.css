@@ -76,9 +76,19 @@
   --shadow-lg: 0 20px 60px rgba(12, 4, 25, 0.6);
 }
 
-* { box-sizing: border-box; }
-html { min-width: 320px; background: var(--bg-primary); }
-body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--bg-primary); color: var(--ink-primary); font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif; transition: background 300ms ease, color 300ms ease; }
+* { 
+  box-sizing: border-box; 
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+html { min-width: 320px; background: var(--bg-primary); -ms-overflow-style: none; scrollbar-width: none; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--bg-primary); color: var(--ink-primary); font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif; transition: background 300ms ease, color 300ms ease; -ms-overflow-style: none; scrollbar-width: none; }
 button, input, select, textarea { font: inherit; }
 button { border: 0; }
 button:not(:disabled) { cursor: pointer; }
@@ -270,7 +280,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px s
 .secondary-timer-btn { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 14px; color: var(--ink-secondary); background: var(--bg-card); border: 1px solid var(--border-color); transition: all 160ms ease; }
 .secondary-timer-btn:hover { color: var(--ink-primary); border-color: var(--coral-accent); }
 
-.ambient-mixer { border-top: 1px solid var(--border-color); pt: 20px; padding-top: 18px; text-align: center; max-width: 500px; margin: 0 auto; }
+.ambient-mixer { border-top: 1px solid var(--border-color); padding-top: 20px; text-align: center; max-width: 500px; margin: 0 auto; }
 .mixer-title { display: block; font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; color: var(--ink-muted); letter-spacing: 0.12em; margin-bottom: 12px; }
 .ambient-buttons { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
 .ambient-chip { display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; font-size: 11px; color: var(--ink-secondary); background: var(--bg-card); border: 1px solid var(--border-color); transition: all 160ms ease; }
